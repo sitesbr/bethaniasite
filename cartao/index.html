@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,14 +8,14 @@
   <title>Avaliação Psicológica para Cirurgia Bariátrica no Tatuapé | Dra. Bethânia</title>
   <meta name="description" content="Decida com Clareza e Segurança. Psicóloga especialista em laudos para cirurgias (Bariátrica, Laqueadura e Vasectomia). Atendimento no Tatuapé." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.suamarca.com.br/" />
+  <link rel="canonical" href="https://bethaniapsi.com.br/" />
 
   <!-- Open Graph (social preview) -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Avaliação Psicológica para Cirurgia Bariátrica no Tatuapé | Dra. Bethânia" />
   <meta property="og:description" content="Psicóloga especialista em laudos para cirurgias (Bariátrica, Laqueadura e Vasectomia). Atendimento no Tatuapé." />
-  <meta property="og:image" content="https://www.suamarca.com.br/og-image.jpg" />
+  <meta property="og:image" content="https://bethaniapsi.com.br/og-image.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,15 +28,18 @@
   <style>
     :root{
       /* =========================
-         BRAND TOKENS (Bethânia)
+         BRAND TOKENS (Bethânia) — AJUSTADOS PARA FICAR COMO O ANEXO
          ========================= */
-      --brand-marsala: #6B3E3E;     /* Primária */
-      --brand-terracota: #C4958B;   /* Acento */
-      --brand-linho: #F5EDE4;       /* Fundo */
-      --brand-linho-2: #EFE6DE;     /* Variação suave */
-      --brand-surface: #FFFFFF;     /* Superfície */
+      --brand-marsala: #6B3E3E;     /* Primária (títulos/CTA) */
+      --brand-terracota: #C6A090;   /* Acento (destaques) */
 
-      --brand-charcoal: #4A4238;    /* Texto escuro */
+      /* Fundo “linho” como no anexo */
+      --brand-linho: #F4EDE4;
+      --brand-linho-2: #EFE8E0;
+
+      --brand-surface: #FFFFFF;
+
+      --brand-charcoal: #4A4238;
       --brand-text: rgba(74,66,56,.92);
       --brand-muted: rgba(74,66,56,.70);
 
@@ -45,14 +48,16 @@
       --radius-md: 16px;
       --radius-pill: 999px;
 
+      /* Bordas suaves */
       --stroke: rgba(107,62,62,.12);
-      --stroke-soft: rgba(107,62,62,.10);
+      --stroke-soft: rgba(107,62,62,.08);
 
-      --shadow-lg: 0 26px 60px rgba(107,62,62,.14);
+      /* Sombras na mesma “pegada” do anexo */
+      --shadow-lg: 0 22px 48px rgba(107,62,62,.14);
       --shadow-md: 0 14px 28px rgba(107,62,62,.10);
       --shadow-sm: 0 10px 18px rgba(107,62,62,.08);
 
-      --focus-ring: 0 0 0 4px rgba(196,149,139,.28);
+      --focus-ring: 0 0 0 4px rgba(198,160,144,.30);
     }
 
     * { box-sizing: border-box; }
@@ -63,10 +68,14 @@
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--brand-text);
 
+      /* Fundo alinhado ao anexo: linho + manchas suaves + pontilhado */
       background:
-        radial-gradient(900px 520px at 14% 12%, rgba(107,62,62,.14), transparent 62%),
-        radial-gradient(720px 520px at 86% 86%, rgba(196,149,139,.22), transparent 62%),
+        radial-gradient(900px 520px at 14% 12%, rgba(198,160,144,.18), transparent 62%),
+        radial-gradient(720px 520px at 86% 86%, rgba(107,62,62,.10), transparent 62%),
+        radial-gradient(circle, rgba(107,62,62,.06) 1px, transparent 1px),
         linear-gradient(180deg, var(--brand-linho), var(--brand-linho-2));
+      background-size: auto, auto, 7px 7px, auto;
+      background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 
       display:flex;
       align-items:center;
@@ -85,15 +94,21 @@
       width:100%;
       max-width: 390px;
       border-radius: var(--radius-xl);
-      background: rgba(255,255,255,.90);
+
+      /* Mais “papel/linho” (menos glass) */
+      background: rgba(244,237,228,.96);
+
       border: 1px solid var(--stroke);
       box-shadow: var(--shadow-lg);
       padding: 44px 22px 26px;
       text-align:center;
       position:relative;
       overflow:hidden;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+
+      /* remove glass */
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+
       animation: floatIn .6s cubic-bezier(.2,.8,.2,1) both;
     }
 
@@ -102,24 +117,24 @@
       to   { opacity:1; transform: translateY(0) scale(1); }
     }
 
-    /* Barra terracota superior */
+    /* Linha superior discreta */
     .card::before{
       content:"";
       position:absolute;
       inset:0 0 auto 0;
       height: 6px;
-      background: linear-gradient(90deg, transparent, rgba(196,149,139,.95), transparent);
-      opacity: .9;
+      background: linear-gradient(90deg, transparent, rgba(198,160,144,.85), transparent);
+      opacity: .95;
     }
 
-    /* Brilho suave marsala no canto */
+    /* Brilho suave */
     .card::after{
       content:"";
       position:absolute;
       inset:-90px -120px auto auto;
       width: 280px;
       height: 280px;
-      background: radial-gradient(circle at 30% 30%, rgba(107,62,62,.12), transparent 62%);
+      background: radial-gradient(circle at 30% 30%, rgba(198,160,144,.12), transparent 62%);
       transform: rotate(10deg);
       pointer-events:none;
     }
@@ -139,8 +154,8 @@
       height:100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 4px solid rgba(255,255,255,.95);
-      outline: 3px solid var(--brand-terracota);
+      border: 4px solid rgba(255,255,255,.96);
+      outline: 3px solid rgba(198,160,144,.92);
       box-shadow: var(--shadow-md);
       transition: transform .18s ease;
     }
@@ -158,9 +173,9 @@
       align-items:center;
       justify-content:center;
 
-      background: linear-gradient(135deg, var(--brand-terracota), #B98277);
+      background: linear-gradient(135deg, rgba(198,160,144,.98), rgba(185,130,119,.98));
       color: var(--brand-charcoal);
-      border: 3px solid rgba(255,255,255,.95);
+      border: 3px solid rgba(255,255,255,.96);
       box-shadow: 0 12px 18px rgba(107,62,62,.12);
     }
 
@@ -194,8 +209,8 @@
       margin: 0 0 22px;
       padding: 14px 14px;
       border-radius: 18px;
-      background: rgba(196,149,139,.18);
-      border: 1px solid rgba(107,62,62,.10);
+      background: rgba(244,237,228,.88);
+      border: 1px solid rgba(198,160,144,.24);
       text-align:left;
       position:relative;
     }
@@ -206,7 +221,7 @@
       left:0; top:12px; bottom:12px;
       width: 3px;
       border-radius: 999px;
-      background: rgba(107,62,62,.45);
+      background: rgba(107,62,62,.40);
     }
 
     .quote p{
@@ -242,7 +257,7 @@
       text-decoration:none;
       color: var(--brand-text);
 
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.92);
       border: 1px solid var(--stroke-soft);
       box-shadow: var(--shadow-sm);
 
@@ -254,7 +269,7 @@
     .action i{
       width: 22px;
       height: 22px;
-      color: var(--brand-marsala);
+      color: rgba(107,62,62,.92);
     }
 
     .action span{
@@ -266,15 +281,15 @@
 
     .action:hover{
       transform: translateY(-3px);
-      background: rgba(255,255,255,.94);
-      border-color: rgba(107,62,62,.22);
+      background: rgba(255,255,255,.96);
+      border-color: rgba(198,160,144,.34);
       box-shadow: 0 16px 26px rgba(107,62,62,.10);
     }
 
     .action:focus-visible{
       outline: none;
       box-shadow: var(--focus-ring), 0 16px 26px rgba(107,62,62,.10);
-      border-color: rgba(196,149,139,.55);
+      border-color: rgba(198,160,144,.55);
     }
 
     /* =========================
@@ -295,9 +310,10 @@
       font-weight: 800;
       font-size: 1rem;
 
-      color: var(--brand-charcoal);
-      background: linear-gradient(135deg, var(--brand-terracota), #B98277);
-      box-shadow: 0 18px 34px rgba(196,149,139,.22);
+      /* CTA como no anexo (marsala sólido) */
+      color: #fff;
+      background: var(--brand-marsala);
+      box-shadow: 0 18px 34px rgba(107,62,62,.22);
 
       transition: transform .16s ease, filter .16s ease, box-shadow .16s ease;
     }
@@ -305,12 +321,12 @@
     .cta:hover{
       transform: translateY(-2px);
       filter: brightness(1.03);
-      box-shadow: 0 20px 38px rgba(196,149,139,.28);
+      box-shadow: 0 20px 38px rgba(107,62,62,.26);
     }
 
     .cta:focus-visible{
       outline: none;
-      box-shadow: var(--focus-ring), 0 20px 38px rgba(196,149,139,.28);
+      box-shadow: var(--focus-ring), 0 20px 38px rgba(107,62,62,.26);
     }
 
     /* =========================
@@ -319,7 +335,7 @@
     .footer{
       margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid rgba(107,62,62,.12);
+      border-top: 1px solid rgba(198,160,144,.24);
     }
 
     .brand{
