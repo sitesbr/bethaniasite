@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//IA Front-end, Web Estratégico//Dra. Bethânia vCard//PT-BR
+UID:77479598-1457-4b9e-887d-2c9792f9f957
+REV:20260218T104610Z
+FN:Dra. Bethânia
+N:Bethânia;Bethânia;;;Dra.
+TITLE:Psicóloga
+ORG:Dra. Bethânia Psicologia
+TEL;TYPE=CELL,VOICE:(11) 99999-9999
+EMAIL;TYPE=INTERNET:contato@suamarca.com.br
+URL:https://www.suamarca.com.br/
+ADR;TYPE=WORK:;;Rua [Nome da Rua], 000;São Paulo;SP;;Brasil
+PHOTO;VALUE=URI:https://raw.githubusercontent.com/sitesbr/bethaniasite/refs/heads/main/img/perfil.png
+NOTE:Avaliação Psicológica para cirurgias (Bariátrica, Laqueadura e Vasectomia). Atendimento no Tatuapé e online.
+END:VCARD
